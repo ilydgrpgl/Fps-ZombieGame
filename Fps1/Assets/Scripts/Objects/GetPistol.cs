@@ -20,7 +20,7 @@ public class GetPistol : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (theDistance <= 2)
+        if (theDistance <= 7)
         {
             actionKey.SetActive(true);
 
@@ -35,14 +35,14 @@ public class GetPistol : MonoBehaviour
 
         if (Input.GetButton("Action"))
         {
-            
+
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
-            if (theDistance <= 2)
+            if (theDistance <= 7)
             {
                 actionKey.SetActive(false);
-            realPistol.SetActive(true);
-           ammoPanel.SetActive(true);
-               
+                realPistol.SetActive(true);
+                ammoPanel.SetActive(true);
+
                 activeCross.SetActive(false);
 
                 Destroy(pistol);
@@ -58,5 +58,5 @@ public class GetPistol : MonoBehaviour
 
         activeCross.SetActive(false);
     }
-   
+
 }

@@ -5,12 +5,13 @@ using UnityEngine;
 public class GetAmmo : MonoBehaviour
 {
     public float theDistance;
-    public GameObject actionKey;
+    ////    public GameObject actionKey;
     public GameObject pistol;
-   
+    public GameObject actionKey;
+
     public GameObject activeCross;
     public GameObject ammoBox;
-   
+
     void Update()
     {
         theDistance = PlayerRay.distanceFromTarget;
@@ -23,7 +24,7 @@ public class GetAmmo : MonoBehaviour
         {
             actionKey.SetActive(true);
 
-            activeCross.SetActive(true);
+           activeCross.SetActive(true);
         }
         else
         {
@@ -39,25 +40,27 @@ public class GetAmmo : MonoBehaviour
             if (theDistance <= 2)
             {
 
-                Pistol pistolScript =pistol.GetComponent<Pistol>();
+                Pistol pistolScript = pistol.GetComponent<Pistol>();
                 pistolScript.carriedAmmo += 8;
-                if(pistolScript.carriedAmmo>=40)
+                if (pistolScript.carriedAmmo >= 40)
                 {
                     pistolScript.carriedAmmo = 40;
                 }
                 pistolScript.UpdateAmmoUI();
+
                 actionKey.SetActive(false);
-               
+
 
                 activeCross.SetActive(false);
 
                 Destroy(ammoBox);
 
-               
+
             }
         }
 
     }
+
     void OnMouseExit()
     {
         actionKey.SetActive(false);

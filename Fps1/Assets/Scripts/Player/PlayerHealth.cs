@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -75,6 +76,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = 0;
         isDead = true;
         healthBar.value = 0;
-        Debug.Log("öldüm");
+        SceneManager.LoadScene(1);
+       
     }
 }

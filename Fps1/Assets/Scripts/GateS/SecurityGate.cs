@@ -10,7 +10,7 @@ public class SecurityGate : MonoBehaviour
     public GameObject door;
     public GameObject activeCross;
     public AudioSource doorSound;
-      GetKey key;
+     GetKey key;
 
 
     private void Start()

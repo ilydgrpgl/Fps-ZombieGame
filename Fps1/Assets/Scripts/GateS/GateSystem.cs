@@ -8,6 +8,7 @@ public class GateSystem : MonoBehaviour
 
     Animator animator;
     public AudioSource sliderDoorSound;
+
     void Start()
     {
         animator = GetComponent<Animator>();

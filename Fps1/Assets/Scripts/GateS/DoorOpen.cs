@@ -21,20 +21,12 @@ public class DoorOpen : MonoBehaviour
 
      void OnMouseOver()
     {
-        if (theDistance <= 2)
-        {
-            actionKey.SetActive(true);
-            actionText.SetActive(true);
-            activeCross.SetActive(true);
-        }
-        else
-        {
-            actionKey.SetActive(false);
-            actionText.SetActive(false);
-            activeCross.SetActive(false);
-        }
+        bool isCloseEnough = theDistance <= 2;
+        actionKey.SetActive(isCloseEnough);
+        actionText.SetActive(isCloseEnough);
+        activeCross.SetActive(isCloseEnough);
 
-        if(Input.GetButton("Action"))
+        if (Input.GetButton("Action") && isCloseEnough)
         {
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             if (theDistance <= 2)
